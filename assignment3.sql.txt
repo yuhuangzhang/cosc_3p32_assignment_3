@@ -1,0 +1,38 @@
+-- Assignment 3
+-- COSC 3P32, Winter 2021
+
+
+INSERT INTO customer (cid, cname, address) VALUES (101, 'John Doe', '123 Nowhere Lane');
+INSERT INTO customer (cid, cname, address) VALUES (102, 'Jane Doe', '123 Nowhere Lane');
+INSERT INTO customer (cid, cname, address) VALUES (1004, 'Harry Houdini', '56 Mystery Lane');
+INSERT INTO customer (cid, cname, address) VALUES (1005, 'Luke Skywalker', '1 Jedi Drive');
+INSERT INTO customer (cid, cname, address) VALUES (1006, 'John Watson XI', '22b Baker Street');
+
+
+INSERT INTO book (isbn, title, author, qtyinstock, price) VALUES ('0000136006329', 'Operating Systems: Internals and Design Principles', 'Stallings, William', 1, 89.99);
+INSERT INTO book (isbn, title, author, qtyinstock, price) VALUES ('0000763717614', 'Fundamentals of Computer Science using Java', 'Hughes, David', 0, 49.99);
+INSERT INTO book (isbn, title, author, qtyinstock, price) VALUES ('9780072465631', 'Database Management Systems; 3rd ed.', 'Ramakrishnan, Gehrke', 1, 99.99);
+INSERT INTO book (isbn, title, author, qtyinstock, price) VALUES ('9780136006633', 'Modern Operating Systems; 3rd ed.', 'Tanenbaum, Andrew', 2, 109.99);
+INSERT INTO book (isbn, title, author, qtyinstock, price) VALUES ('0000895775522', 'The Further Adventures of Sherlock Holmes', 'Arthur Conan Doyle', 10, 30.99);
+INSERT INTO book (isbn, title, author, qtyinstock, price) VALUES ('8493948584832', 'Star Wars - Episode 1', 'Lucas, George', 1, 67.44);
+INSERT INTO book (isbn, title, author, qtyinstock, price) VALUES ('8392938392938', 'Star Wars - Episode 2', 'Lucas, George', 4, 57.33);
+INSERT INTO book (isbn, title, author, qtyinstock, price) VALUES ('8594930494030', 'Star Wars - Episode 3', 'Lucas, George', 2, 65);
+INSERT INTO book (isbn, title, author, qtyinstock, price) VALUES ('0000345453395', 'Star Wars Trilogy, Episodes IV, V, VI', 'Lucas, George', 0, 45.2);
+
+
+INSERT INTO orders (ordernum, cid, order_date, cardnum) VALUES (123, 101, '2011-05-01', '4505123412344321');
+INSERT INTO orders (ordernum, cid, order_date, cardnum) VALUES (124, 102, '2011-05-01', '4505444566778899');
+INSERT INTO orders (ordernum, cid, order_date, cardnum) VALUES (125, 101, '2011-05-11', '4505123412344321');
+INSERT INTO orders (ordernum, cid, order_date, cardnum) VALUES (130, 1006, '2012-02-11', '4505123412344322');
+INSERT INTO orders (ordernum, cid, order_date, cardnum) VALUES (1111, 1005, '2014-01-01', '9999991234567890');
+
+
+INSERT INTO orderlist (ordernum, isbn, qty, ship_date) VALUES (123, '9780072465631', 1, '2011-05-02');
+INSERT INTO orderlist (ordernum, isbn, qty, ship_date) VALUES (123, '9780136006633', 1, null);
+INSERT INTO orderlist (ordernum, isbn, qty, ship_date) VALUES (124, '0000763717614', 1, '2011-05-02');
+INSERT INTO orderlist (ordernum, isbn, qty, ship_date) VALUES (125, '0000763717614', 1, null);
+INSERT INTO orderlist (ordernum, isbn, qty, ship_date) VALUES (130, '0000895775522', 11, '2012-02-11');
+INSERT INTO orderlist (ordernum, isbn, qty, ship_date) VALUES (1111, '8493948584832', 2, NULL);
+INSERT INTO orderlist (ordernum, isbn, qty, ship_date) VALUES (1111, '8392938392938', 1, '2014-01-21');
+INSERT INTO orderlist (ordernum, isbn, qty, ship_date) VALUES (1111, '8594930494030', 1, NULL);
+INSERT INTO orderlist (ordernum, isbn, qty, ship_date) VALUES (1111, '0000345453395', 1, '2014-01-21');
