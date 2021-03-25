@@ -1,1 +1,1 @@
-
+delete from book where isbn='1524763160';
