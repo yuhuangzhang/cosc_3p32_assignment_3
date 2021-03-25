@@ -1,0 +1,47 @@
+       Table "public.customer"
+ Column  |      Type      | Modifiers
+---------+----------------+-----------
+ cid     | integer        | not null
+ cname   | character(80)  |
+ address | character(200) |
+Indexes:
+    "customer_pkey" PRIMARY KEY, btree (cid)
+Referenced by:
+    TABLE "orders" CONSTRAINT "orders_cid_fkey" FOREIGN KEY (cid) REFERENCES customer(cid)
+              Table "public.book"
+   Column   |     Type      | Modifiers
+------------+---------------+-----------
+ isbn       | character(13) | not null
+ title      | character(80) |
+ author     | character(80) |
+ qtyinstock | integer       |
+ price      | real          |
+Indexes:
+    "book_pkey" PRIMARY KEY, btree (isbn)
+Referenced by:
+    TABLE "orderlist" CONSTRAINT "orderlist_isbn_fkey" FOREIGN KEY (isbn) REFERENCES book(isbn)
+           Table "public.orderlist"
+  Column   |     Type      | Modifiers
+-----------+---------------+-----------
+ ordernum  | integer       | not null
+ isbn      | character(13) | not null
+ qty       | integer       |
+ ship_date | date          |
+Indexes:
+    "orderlist_pkey" PRIMARY KEY, btree (ordernum, isbn)
+Foreign-key constraints:
+    "orderlist_isbn_fkey" FOREIGN KEY (isbn) REFERENCES book(isbn)
+    "orderlist_ordernum_fkey" FOREIGN KEY (ordernum) REFERENCES orders(ordernum)
+             Table "public.orders"
+   Column   |     Type      | Modifiers
+------------+---------------+-----------
+ ordernum   | integer       | not null
+ cid        | integer       |
+ order_date | date          |
+ cardnum    | character(16) |
+Indexes:
+    "orders_pkey" PRIMARY KEY, btree (ordernum)
+Foreign-key constraints:
+    "orders_cid_fkey" FOREIGN KEY (cid) REFERENCES customer(cid)
+Referenced by:
+    TABLE "orderlist" CONSTRAINT "orderlist_ordernum_fkey" FOREIGN KEY (ordernum) REFERENCES orders(ordernum)
