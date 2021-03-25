@@ -1,0 +1,12 @@
+yz16vi=> Select book.title from book
+yz16vi-> Where book.isbn in (
+yz16vi(> Select orderlist.isbn From orderlist Where orderlist.ordernum in (
+yz16vi(> Select orders.ordernum From orders Where orders.cid in (
+yz16vi(> Select customer.cid From customer Where cname='John Doe'
+yz16vi(> )));
+                                      title
+----------------------------------------------------------------------------------
+ Fundamentals of Computer Science using Java
+ Database Management Systems; 3rd ed.
+ Modern Operating Systems; 3rd ed.
+(3 rows)
