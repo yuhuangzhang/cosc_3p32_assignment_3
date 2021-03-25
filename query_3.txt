@@ -7,3 +7,4 @@ Order By "total" Desc) B limit 1;
 ------
  1005
 (1 row)
+

@@ -45,3 +45,4 @@ Foreign-key constraints:
     "orders_cid_fkey" FOREIGN KEY (cid) REFERENCES customer(cid)
 Referenced by:
     TABLE "orderlist" CONSTRAINT "orderlist_ordernum_fkey" FOREIGN KEY (ordernum) REFERENCES orders(ordernum)
+
