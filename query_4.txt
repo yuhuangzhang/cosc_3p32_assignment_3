@@ -1,4 +1,4 @@
- Select customer.cname From customer
+Select customer.cname From customer
 Where customer.cid Not In(
 Select cid From
 (Select A.cid, Count(A.cid) As "total" From
