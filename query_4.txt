@@ -1,0 +1,11 @@
+ Select customer.cname From customer
+Where customer.cid Not In(
+Select cid From
+(Select A.cid, Count(A.cid) As "total" From
+(orderlist Join orders On orderlist.ordernum=orders.ordernum) A
+Group By A.cid
+Order By "total" Desc) b);
+                                      cname
+----------------------------------------------------------------------------------
+ Harry Houdini
+(1 row)
