@@ -1,0 +1,9 @@
+Select cid From
+(Select A.cid, Count(A.cid) As "total" From
+(orderlist Join orders On orderlist.ordernum=orders.ordernum) A
+Group By A.cid
+Order By "total" Desc) B limit 1;
+ cid
+------
+ 1005
+(1 row)
